@@ -8,7 +8,7 @@ COPY src ./src
 
 COPY mvnw .
 
-COPY .mvn .
+COPY .mvn .mvn
 
 RUN chmod 777 mvnw
 
