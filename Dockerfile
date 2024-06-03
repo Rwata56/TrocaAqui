@@ -8,6 +8,8 @@ COPY src ./src
 
 COPY mvnw .
 
+COPY .mvn .
+
 RUN chmod 777 mvnw
 
 RUN ./mvnw package
