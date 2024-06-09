@@ -1,0 +1,360 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5F2D0;
+}
+
+header {
+    background-color: #3A6B35;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo h1 {
+    font-family: 'Germania One', sans-serif;
+    color: #E3B448;
+    margin: 0;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.search-bar input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.search-bar button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+header nav ul li {
+    margin: 0 1rem;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+header nav ul li a svg {
+    margin-left: 0.5rem;
+}
+
+section {
+    padding: 2rem;
+}
+
+.container {
+    background-color: #9BF290;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #3A6B35;
+    text-align: left; /* Alinha o texto no início */
+}
+
+.container input {
+    padding: 0.5rem;
+    border: 1px solid #3A6B35;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    width: calc(100% - 22px);
+    box-sizing: border-box; /* Garante que a largura inclua o padding e border */
+}
+
+.container button {
+    background-color: #3A6B35;
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.container p {
+    color: #3A6B35;
+}
+
+.container a {
+    color: #3A6B35;
+    text-decoration: underline;
+    text-decoration-color: #3A6B35;
+    transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.container a:active {
+    text-shadow: 0 0 5px #3A6B35;
+    color: #2e542b;
+}
+
+#home {
+    background: #f4f4f4;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+#home h1, #home p, #home button a {
+    color: #3A6B35;
+}
+
+#home button {
+    background-color: #3A6B35;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+#home button a {
+    color: white;
+    text-decoration: none;
+}
+
+#benefits {
+    background: #9BF290;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.benefits-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.benefit {
+    margin-bottom: 2rem;
+}
+
+.benefit h3 {
+    color: #3A6B35;
+}
+
+.benefit p {
+    color: #3A6B35;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem 0; /* Adicionado padding para dar espaço entre os elementos no cabeçalho */
+    }
+
+    header nav ul {
+        justify-content: center;
+        width: 100%; /* Garante que a lista ocupe a largura total */
+    }
+
+    .search-bar {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .search-bar input {
+        flex-grow: 1;
+    }
+
+    .search-bar button {
+        margin-left: 0;
+    }
+
+    header nav ul li {
+        margin: 0.5rem 0; /* Espaçamento entre os itens no menu */
+    }
+
+    header nav ul li a svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .search-bar input {
+        font-size: 0.875rem;
+    }
+
+    header nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    header nav ul li a svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .container {
+        max-width: 300px;
+    }
+}
+
+#login, #cadastro {
+    background: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: auto; /* Permite scroll nas telas de login e cadastro */
+    position: relative;
+}
+
+#login .container, #cadastro .container {
+    background: #9BF290;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0.5, 0, 0, 0.5);
+    max-width: 400px;
+    width: 100%;
+    margin: 0 1rem; /* Garante que a caixa esteja sempre visível */
+    box-sizing: border-box;
+}
+
+#login .container h2, #cadastro .container h2 {
+    text-align: center;
+}
+
+#login form, #cadastro form {
+    display: flex;
+    flex-direction: column;
+}
+
+#login form label, #cadastro form label {
+    margin-top: 1rem;
+    text-align: left; /* Alinha o texto no início */
+}
+
+#login form input, #cadastro form input {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    width: 100%; /* O input ocupará toda a largura disponível */
+    box-sizing: border-box; /* Garante que a largura inclua o padding e border */
+}
+
+#login form button, #cadastro form button {
+    margin-top: 2rem;
+    background-color: #3A6B35;
+    color: white;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+    width: 100%; /* O botão ocupará toda a largura disponível */
+}
+#login form button, #cadastro form button {
+    margin-top: 2rem;
+    background-color: #3A6B35;
+    color: white;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+    width: 100%; /* O botão ocupará toda a largura disponível */
+}
+
+#ofertas {
+    background: #fff;
+}
+
+.categories, .most-searched {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.category, .book {
+    background: #f4f4f4;
+    padding: 1rem;
+    border-radius: 8px;
+    flex: 1 1 calc(33% - 1rem);
+    text-align: center;
+}
+.category, .book {
+    background: #f4f4f4;
+    padding: 1rem;
+    border-radius: 8px;
+    flex: 1 1 calc(33% - 1rem);
+    text-align: center; /* Centraliza o conteúdo dentro dos elementos */
+}
+
+@media (max-width: 768px) {
+    .category, .book {
+        flex: 1 1 calc(50% - 1rem); /* Em telas menores, ajusta para duas colunas */
+    }
+}
+
+@media (max-width: 480px) {
+    .category, .book {
+        flex: 1 1 calc(100% - 1rem); /* Em telas ainda menores, ajusta para uma única coluna */
+    }
+}
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 3rem; /* Aumenta o tamanho da logo na versão mobile */
+    }
+
+    header nav ul {
+        justify-content: space-around; /* Distribui os elementos igualmente */
+    }
+
+    header nav ul li {
+        margin: 0.5rem; /* Adiciona espaçamento entre os elementos */
+    }
+}
+@media (max-width: 480px) {
+    .search-bar {
+        width: 90%; /* Reduz o tamanho da barra de pesquisa */
+        margin: 1rem auto; /* Centraliza a barra de pesquisa */
+    }
+
+    .search-bar input {
+        flex-grow: 1;
+        width: auto; /* Remove a largura fixa do input para permitir o ajuste automático */
+    }
+
+    .search-bar button {
+        margin-left: 0.5rem;
+    }
+}
+
