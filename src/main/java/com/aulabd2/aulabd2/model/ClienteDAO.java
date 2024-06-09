@@ -37,6 +37,34 @@ public class ClienteDAO {
     	String sql = "SELECT * FROM cliente";
     	return jdbc.queryForList(sql);
     }
+    public List<Map<String,Object>> obterCliente(int id){
+		String sql = "SELECT * FROM cliente where id = ?";
+		Object[] obj = new Object[1];
+		obj[0] = id;
+		return jdbc.queryForList(sql, obj);
+	}
 
+    public void atualizarCliente(int id, Cliente cli) {
+        String sql = "UPDATE clientes SET nome = ?, email = ?, senha = ?, senhaC = ? WHERE id = ?";
+        Object[] obj = new Object[4];
+		//primeiro ?
+		obj[0] = cli.getNome();
+		//segundo ?
+		obj[1] = cli.getEmail();
+        //terceiro ?
+        obj[2] = cli.getSenha();
+		//quarto ?
+        obj[3] = cli.getSenhaC();
+
+		obj[4] = id;
+		jdbc.update(sql, obj);
+    }
+
+    public void apagarCliente(int id){
+		String sql = "DELETE FROM cliente WHERE id = ?";
+		Object[] obj = new Object[1];
+		obj[0] = id;
+		jdbc.update(sql, obj);
+	}
 
 }

@@ -9,7 +9,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class ClienteService {
     
-    @Autowired ClienteDAO cdao;
+    @Autowired 
+    ClienteDAO cdao;
 
     public void inserirCliente(Cliente cli){
         cdao.inserirCliente(cli);
@@ -19,4 +20,16 @@ public class ClienteService {
         return cdao.listarClientes();
     }
 
+    public void atualizarCliente(int id, Cliente cli){
+		cdao.atualizarCliente(id, cli);
+	}
+
+	public List<Map<String, Object>> obterCliente(int id){
+		return cdao.obterCliente(id);
+	}
+
+	public void apagarCliente(int id){
+		cdao.apagarCliente(id);
+	}
 }
+
