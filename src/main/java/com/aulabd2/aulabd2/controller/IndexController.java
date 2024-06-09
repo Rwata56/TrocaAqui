@@ -34,7 +34,7 @@ public class IndexController {
     public String cadastrar(Model model, @ModelAttribute Cliente cli){
         ClienteService cs = context.getBean(ClienteService.class);
 		cs.inserirCliente(cli);
-        return "sucesso";
+        return "home";
     }
 
     @GetMapping("/listar")
