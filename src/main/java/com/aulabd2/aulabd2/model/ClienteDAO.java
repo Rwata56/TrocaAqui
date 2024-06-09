@@ -23,13 +23,13 @@ public class ClienteDAO {
 	}
 
     public void inserirCliente(Cliente cli){
-        String sql = "INSERT INTO cliente(nome,cpf)" +
-        " VALUES (?,?)";
-        Object[] obj = new Object[2];
-        //primeiro ?
+        String sql = "INSERT INTO cliente(nome,email,senha,senhaC)" +
+        " VALUES (?,?,?,?)";
+        Object[] obj = new Object[4];
         obj[0] = cli.getNome();
-        //segundo ?
-        obj[1] = cli.getCpf();
+        obj[1] = cli.getEmail();
+        obj[2] = cli.getSenha();
+        obj[3] = cli.getSenhaC();
         jdbc.update(sql, obj);
     }
 

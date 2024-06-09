@@ -4,46 +4,66 @@ package com.aulabd2.aulabd2.model;
 public class Cliente {
     
     private int id;
-    private String nome, cpf;
+    private String nome, email, senha, senhaC;
 
     //Sobrecarga de construtores
     public Cliente(){
 
     }
 
-    public Cliente(String nome, String cpf){
+    public Cliente(String nome, String email, String senha, String senhaC ){
         this.nome = nome;
-        this.cpf = cpf;
+        this.email = email;
+        this.senha = senha;
+        this.senhaC = senhaC;
     }
 
-    public Cliente(int id, String nome, String cpf){
+    public Cliente(int id, String nome, String email, String senha, String senhaC ){
         this.id = id;
         this.nome = nome;
-        this.cpf = cpf;
+        this.email = email;
+        this.senha = senha;
+        this.senhaC = senhaC;
     }
 
-    public void setId(int id){
-        this.id = id;
-    }
-
-    public void setNome(String nome){
-        this.nome = nome;
-    }
-
-    public void setCpf(String cpf){
-        this.cpf = cpf;
-    }
-
-    public int getId(){
+    public int getId() {
         return id;
     }
 
-    public String getCpf(){
-        return cpf;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getNome(){
+    public String getNome() {
         return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public String getSenhaC() {
+        return senhaC;
+    }
+
+    public void setSenhaC(String senhaC) {
+        this.senhaC = senhaC;
     }
 
 }
