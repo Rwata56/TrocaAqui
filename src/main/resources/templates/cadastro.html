@@ -27,18 +27,18 @@
 				<h2>Cadastro</h2>
 				<form action="#" th:action="@{/Cadastrar}" th:object="${cliente}" method="post">
 					<label for="usuario">Usuário:</label>
-					<input th:field="" type="text" id="usuario" name="usuario" required>
+					<input th:field="nome" type="text" id="usuario" name="usuario" required>
 					
 					<label for="email">Email:</label>
-					<input type="email" id="email" name="email" required>
+					<input th:field="email" type="email" id="email" name="email" required>
 					
 					<label for="password">Senha:</label>
-					<input type="password" id="password" name="password" required>
+					<input th:field="senha" maxlength="10" type="password" id="password" name="password" required>
 					
 					<label for="confirm-password">Confirmar Senha:</label>
-					<input type="password" id="confirm-password" name="confirm-password" required>
+					<input th:field="senhaC" maxlength="10" type="password" id="confirm-password" name="confirm-password" required>
 					
-					<button type="submit">Cadastrar</button>
+					<button type="submit" value="Cadastrar">Cadastrar</button>
 				</form>
 				<p>Já tem uma conta? <a href="login.html">Faça login</a></p>
 			</div>
