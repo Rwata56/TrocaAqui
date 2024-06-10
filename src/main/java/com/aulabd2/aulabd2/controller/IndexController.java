@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.aulabd2.aulabd2.model.Cliente;
@@ -43,6 +44,28 @@ public class IndexController {
         List<Map<String,Object>> lista = cs.listarClientes();
         model.addAttribute("lista", lista);
         return "lista";
+    }
+
+    @GetMapping("/editar/{id}")
+    public String editar(Model model, @PathVariable Integer id){
+        ClienteService cs = context.getBean(ClienteService.class);
+        List<Map<String,Object>> cli = cs.obterCliente(id);
+        model.addAttribute("cliente", new Cliente(cli.get(0)));
+        return "editar";
+    }
+
+    @PostMapping("/editar/{id}")
+    public String editar(Model model, @ModelAttribute Cliente cli, @PathVariable Integer id){
+        ClienteService cs = context.getBean(ClienteService.class);
+		cs.atualizarCliente(id, cli);
+        return "redirect:/listar";
+    }
+
+    @PostMapping("/deletar/{id}")
+    public String deletar(Model model, @PathVariable Integer id){
+        ClienteService cs = context.getBean(ClienteService.class);
+		cs.apagarCliente(id);
+        return "redirect:/listar";
     }
 
 }

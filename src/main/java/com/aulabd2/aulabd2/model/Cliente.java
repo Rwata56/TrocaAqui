@@ -1,5 +1,7 @@
 package com.aulabd2.aulabd2.model;
 
+import java.util.Map;
+
 //POJO - Plain Old Java Object
 public class Cliente {
     
@@ -9,6 +11,14 @@ public class Cliente {
     //Sobrecarga de construtores
     public Cliente(){
 
+    }
+
+    public Cliente(Map<String,Object> map){
+        this.id = (Integer) map.get("id");
+        this.nome = (String) map.get("nome");
+        this.email = (String) map.get("email");
+        this.senha = (String) map.get("senha");
+        this.senhaC = (String) map.get("senhaC");
     }
 
     public Cliente(String nome, String email, String senha, String senhaC ){

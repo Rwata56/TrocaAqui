@@ -45,8 +45,8 @@ public class ClienteDAO {
 	}
 
     public void atualizarCliente(int id, Cliente cli) {
-        String sql = "UPDATE clientes SET nome = ?, email = ?, senha = ?, senhaC = ? WHERE id = ?";
-        Object[] obj = new Object[4];
+        String sql = "UPDATE cliente SET nome = ?, email = ?, senha = ?, senhaC = ? WHERE id = ?";
+        Object[] obj = new Object[5];
 		//primeiro ?
 		obj[0] = cli.getNome();
 		//segundo ?

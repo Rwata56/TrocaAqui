@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="./css/style.css">
 <head>
     <title>Lista Clientes</title>
 </head>
@@ -19,6 +20,12 @@
             	<td th:text="${cli.nome}"></td>
             	<td th:text="${cli.email}"></td>
 				<td th:text="${cli.senha}"></td>
+				<td><a th:href="@{/editar/{id}(id=${cli.id})}">Editar</a> </td>
+				<td>
+					<form action="#" th:action="@{/deletar/{id}(id=${cli.id})}" th:object="${cli}" method="post">
+						<button type="submit" value="deletar">Delete</button>
+					</form>
+				</td>
        		</tr>
      	</tbody>
     </table>

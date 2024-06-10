@@ -24,8 +24,8 @@
 	
 		<section id="cadastro">
 			<div class="container">
-				<h2>Cadastro</h2>
-				<form action="#" th:action="@{/cadastrar}" th:object="${cliente}" method="post">
+				<h2>Editar</h2>
+				<form action="#" th:action="@{/editar/{id}(id=${cliente.id})}" th:object="${cliente}" method="post">
 					<label for="nome">NOME:</label>
 					<input th:field="*{nome}" type="text" id="nome" name="nome" required>
 					
@@ -38,7 +38,7 @@
 					<label for="senhaC">Confirmar Senha:</label>
 					<input th:field="*{senhaC}" maxlength="10" type="password" id="senhaC" name="senhaC" required>
 					
-					<button type="submit" value="Cadastrar">Cadastrar</button>
+					<button type="submit" value="Salvar">Salvar</button>
 				</form>
 			</div>
 		</section>
