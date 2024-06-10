@@ -3,7 +3,7 @@ server:
 
 spring:
     datasource:
-       url: jdbc:postgresql://dpg-cpisnd4f7o1s73bmbcjg-a/trocaaqui
+        url: jdbc:postgresql://dpg-cpisnd4f7o1s73bmbcjg-a/trocaaqui
         username: portgress
         password: SyT8ey3YHDHdu496UcOJtjEu2trXpA6T
         driver-class-name: org.postgresql.Driver
